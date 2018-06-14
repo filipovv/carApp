@@ -41,7 +41,14 @@ public class Car {
      * @param weight        Weight of the car in kilograms.
      * @param consumption   Average fuel consumption.
      */
-    public Car(int doors, int seats, String color, int year, String steeringWheel, int currentShift, int weight, double consumption) {
+    public Car(int doors,
+               int seats,
+               String color,
+               int year,
+               String steeringWheel,
+               int currentShift,
+               int weight,
+               double consumption) {
         this.setDoors(doors);
         this.setSeats(seats);
         this.setColor(color);
@@ -127,6 +134,26 @@ public class Car {
      */
     public double fuelNeededToReachDestination(int destinationDistance) {
         return this.getConsumption() / 100 * destinationDistance;
+    }
+
+    /**
+     * toString method of the Car class.
+     *
+     * @return String value providing a summed up information about the object.
+     */
+    @Override
+    public String toString() {
+        return String.format("Car info:%n" +
+                        "Doors: %d%n" +
+                        "Seats: %d%n" +
+                        "Color: %s%n" +
+                        "Year Created: %d%n" +
+                        "Steering Wheel: %s%n" +
+                        "Gear Shifts: %s%n" +
+                        "Current Shift: %d%n" +
+                        "Weight: %d%n" +
+                        "Consumption: %.2f%n",
+                this.getDoors(), this.getSeats(), this.getColor(), this.getYear(), this.getSteeringWheel(), this.getGearShift(), this.getCurrentShift(), this.getWeight(), this.getConsumption());
     }
 
     /**
@@ -309,26 +336,4 @@ public class Car {
             this.consumption = consumption;
         }
     }
-
-    /**
-     * toString method of the Car class.
-     *
-     * @return String value providing a summed up information about the object.
-     */
-    @Override
-    public String toString() {
-        return String.format("Car info:%n" +
-                        "Doors: %d%n" +
-                        "Seats: %d%n" +
-                        "Color: %s%n" +
-                        "Year Created: %d%n" +
-                        "Steering Wheel: %s%n" +
-                        "Gear Shifts: %s%n" +
-                        "Current Shift: %d%n" +
-                        "Weight: %d%n" +
-                        "Consumption: %.2f%n",
-                this.getDoors(), this.getSeats(), this.getColor(), this.getYear(), this.getSteeringWheel(), this.getGearShift(), this.getCurrentShift(), this.getWeight(), this.getConsumption());
-    }
-
-
 }
