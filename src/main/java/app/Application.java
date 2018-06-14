@@ -33,10 +33,10 @@ public class Application {
 
         int addPassengers = 4;
         System.out.printf("Is there space for %d passengers in the car: %s%n", addPassengers, car.isSpaceEnoughForNumberOfPassengers(addPassengers));
-        System.out.println("Weight is under 3500: "+car.isWeightUnder3500kg(4, 4));
+        System.out.println("Total weight is under 3500: "+car.isWeightUnder3500kg(4, 4));
 
         int distance = 75;
-        System.out.printf("Fuel needed for %dkm - %.2f liters.%n", distance, car.fuelNeededToReachDestination(distance));
+        System.out.printf("Fuel needed for %dkm trip - %.2f liters.%n", distance, car.fuelNeededToReachDestination(distance));
 
     }
 }
