@@ -91,7 +91,6 @@ public class Car {
         } catch (IndexOutOfBoundsException e) {
             return e.getMessage();
         }
-
     }
 
     /**
@@ -100,8 +99,12 @@ public class Car {
      * @return Message if the shift change was successful or not.
      */
     public String changeCurrentShiftDown() {
-        this.setCurrentShift(this.getCurrentShift() - 1);
-        return "Current shift changed to " + this.getCurrentShift();
+        try {
+            this.setCurrentShift(this.getCurrentShift() - 1);
+            return "Current shift changed to " + this.getCurrentShift();
+        } catch (IndexOutOfBoundsException e) {
+            return e.getMessage();
+        }
     }
 
     /**
