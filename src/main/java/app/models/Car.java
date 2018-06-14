@@ -41,14 +41,7 @@ public class Car {
      * @param weight        Weight of the car in kilograms.
      * @param consumption   Average fuel consumption.
      */
-    public Car(int doors,
-               int seats,
-               String color,
-               int year,
-               String steeringWheel,
-               int currentShift,
-               int weight,
-               double consumption) {
+    public Car(int doors, int seats, String color, int year, String steeringWheel, int currentShift, int weight, double consumption) {
         this.setDoors(doors);
         this.setSeats(seats);
         this.setColor(color);
@@ -114,7 +107,7 @@ public class Car {
      * @return A boolean value if there is enough space or not.
      */
     public boolean isSpaceEnoughForNumberOfPassengers(int numberOfPassengers) {
-        return this.getSeats() - 1 >= numberOfPassengers;
+        return (this.getSeats() - 1) >= numberOfPassengers;
     }
 
     /**
@@ -126,7 +119,7 @@ public class Car {
      */
     public boolean isWeightUnder3500kg(int numberOfBags, int numberOfPassengers) {
         int totalAddedWeight = numberOfBags * AVERAGE_BAG_WEIGHT + numberOfPassengers * AVERAGE_PERSON_WEIGHT;
-        return this.getWeight() + totalAddedWeight < 3500;
+        return (this.getWeight() + totalAddedWeight) < 3500;
     }
 
     /**
