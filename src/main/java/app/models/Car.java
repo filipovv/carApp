@@ -36,7 +36,7 @@ public class Car {
      * @param seats         Number of seats in the car.
      * @param color         Color of the car.
      * @param year          Year when the car was manufactured.
-     * @param steeringWheel Placement of the steering wheen in the car. Can be Left - Left-Handed, or Right - Right-Handed.
+     * @param steeringWheel Placement of the steering wheel in the car. Can be Left - Left-Handed, or Right - Right-Handed.
      * @param currentShift  The current shift the car is on right now.
      * @param weight        Weight of the car in kilograms.
      * @param consumption   Average fuel consumption.
@@ -252,7 +252,7 @@ public class Car {
      * @param steeringWheel String value of the side of the steering wheel. Can only be Left or Right.
      */
     private void setSteeringWheel(String steeringWheel) {
-        if (!steeringWheel.equalsIgnoreCase("left") && !steeringWheel.equalsIgnoreCase("right")) {
+        if (!"left".equalsIgnoreCase(steeringWheel) && !"right".equalsIgnoreCase(steeringWheel)) {
             throw new IllegalArgumentException("Steering wheel can only be left-handed or right-handed.");
         } else {
             this.steeringWheel = SteeringWheelSide.valueOf(steeringWheel.toUpperCase());
@@ -328,11 +328,11 @@ public class Car {
     /**
      * Setter method for fuel consumption.
      *
-     * @param consumption Double value to be set as fueld consumption of the car.
+     * @param consumption Double value to be set as fuel consumption of the car.
      */
     private void setConsumption(double consumption) {
         if (consumption > MAX_FUEL_CONSUMPTION) {
-            throw new IllegalArgumentException("Fueld consumption cannot exceed " + MAX_FUEL_CONSUMPTION + ".");
+            throw new IllegalArgumentException("Fuel consumption cannot exceed " + MAX_FUEL_CONSUMPTION + ".");
         } else if (consumption < MIN_FUEL_CONSUMPTION) {
             throw new IllegalArgumentException("Fuel consumption cannot be lower that " + MIN_FUEL_CONSUMPTION + ".");
         } else {
